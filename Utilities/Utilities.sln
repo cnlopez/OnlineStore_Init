@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{32D755F1-FB22-4DBF-A343-58B74646320F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{A68FEB87-ECAC-47EF-9B6E-3D8E7F1B43FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers", "Mappers\Mappers.csproj", "{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32D755F1-FB22-4DBF-A343-58B74646320F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D755F1-FB22-4DBF-A343-58B74646320F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D755F1-FB22-4DBF-A343-58B74646320F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D755F1-FB22-4DBF-A343-58B74646320F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60} = {A68FEB87-ECAC-47EF-9B6E-3D8E7F1B43FC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {383312C5-D3B6-4A76-ACDD-9E260306CDF2}
+	EndGlobalSection
+EndGlobal

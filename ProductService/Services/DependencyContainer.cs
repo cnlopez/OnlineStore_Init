@@ -10,7 +10,7 @@ using Data.Interfaces;
 using Business.Interfaces;
 using Business.Services;
 using Business.Mappers;
-using Mappers;
+using Mappers.DependencyInjection;
 
 namespace Services
 {
