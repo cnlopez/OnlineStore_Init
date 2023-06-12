@@ -1,7 +1,4 @@
-using Business.Interfaces;
-using Data;
-using Data.Interfaces;
-
+using Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,8 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-builder.Services.AddScoped<IProductService, Business.Services.ProductService>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
+builder.Services.RegisterBusiness(builder.Configuration);
 
 var app = builder.Build();
 

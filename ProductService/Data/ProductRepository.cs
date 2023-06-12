@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
 
 namespace Data
 {
@@ -22,21 +23,10 @@ namespace Data
 
         public async Task<IEnumerable<Products>> GetProductsAsync()
         {
-            var products = new List<Products>();
-            using (SqlConnection sqlConnection = new SqlConnection(_configuration.GetConnectionString("API_OnlineStoreInit")))
+            var products = Enumerable.Empty<Products>();
+            using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("API_OnlineStoreInit")))
             {
-                sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("spGetProducts", sqlConnection);
-                sqlCommand.CommandType = CommandType.StoredProcedure;
-                SqlDataReader rd = await sqlCommand.ExecuteReaderAsync();
-                while (rd.Read())
-                {
-                    products.Add(new Products
-                    {
-                        ProductId = rd.GetInt32("ProductId"),
-                        ProductName = rd["ProductName"].ToString()
-                    });
-                }
+                products = await sqlConnection.QueryAsync<Products>("spGetProducts", commandType: CommandType.StoredProcedure);
             }
             return products;
         }
