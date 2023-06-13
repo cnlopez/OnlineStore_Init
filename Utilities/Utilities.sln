@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{A68FEB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mappers", "Mappers\Mappers.csproj", "{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModels", "ViewModels\ViewModels.csproj", "{70BCB844-4BEA-4B9F-81BB-E98C981A0DF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70BCB844-4BEA-4B9F-81BB-E98C981A0DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70BCB844-4BEA-4B9F-81BB-E98C981A0DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70BCB844-4BEA-4B9F-81BB-E98C981A0DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70BCB844-4BEA-4B9F-81BB-E98C981A0DF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7B1D8368-9AB6-4FA2-98AC-B08BA8688A60} = {A68FEB87-ECAC-47EF-9B6E-3D8E7F1B43FC}
+		{70BCB844-4BEA-4B9F-81BB-E98C981A0DF5} = {A68FEB87-ECAC-47EF-9B6E-3D8E7F1B43FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {383312C5-D3B6-4A76-ACDD-9E260306CDF2}
