@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ProductService.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -16,8 +15,11 @@ namespace ProductService.Controllers
             _productService = productService;
         }
 
-        // GET: api/<ProductsController>
-        [HttpGet]
+        /// <summary>
+        /// Get Products
+        /// </summary>
+        /// <returns></returns>
+        [Route("products"), HttpGet]
         public async Task<ActionResult> GetProducts()
         {
             return Ok(await _productService.GetProducts());
