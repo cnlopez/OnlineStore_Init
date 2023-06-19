@@ -1,0 +1,14 @@
+[
+  {
+    "ProductId": 1,
+    "ProductName": "Fridge"
+  },
+  {
+    "ProductId": 2,
+    "ProductName": "TV"
+  },
+  {
+    "ProductId": 3,
+    "ProductName": "Washing machine"
+  }
+]
