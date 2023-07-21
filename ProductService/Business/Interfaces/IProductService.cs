@@ -10,5 +10,8 @@ namespace Business.Interfaces
     public interface IProductService
     {
         Task<IEnumerable<ProductViewModel>> GetProducts();
+        Task<ProductViewModel> GetProduct(int productId);
+        Task SaveProduct();
+
     }
 }

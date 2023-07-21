@@ -10,5 +10,7 @@ namespace Data.Interfaces
     public interface IProductRepository
     {
         Task<IEnumerable<Products>> GetProductsAsync();
+        Task<Products> GetProductAsync(int productId);
+        Task SaveProductAsync();
     }
 }

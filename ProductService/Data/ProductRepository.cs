@@ -30,5 +30,24 @@ namespace Data
             }
             return products;
         }
+
+        public async Task<Products> GetProductAsync(int productId)
+        {
+            var product = new Products();
+            using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("API_OnlineStoreInit")))
+            {
+                product = await sqlConnection.QueryFirstAsync<Products>("spGetProductsById", new { @ProductId = productId }, commandType: CommandType.StoredProcedure);
+            }
+            return product;
+        }
+
+        public async Task SaveProductAsync()
+        {
+            var product = new Products();
+            using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("API_OnlineStoreInit")))
+            {
+                await sqlConnection.ExecuteAsync("spGetProducts", commandType: CommandType.StoredProcedure);
+            }
+        }
     }
 }

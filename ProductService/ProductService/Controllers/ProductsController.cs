@@ -24,5 +24,45 @@ namespace ProductService.Controllers
         {
             return Ok(await _productService.GetProducts());
         }
+
+        /// <summary>
+        /// Get Product
+        /// </summary>
+        /// <returns></returns>
+        [Route("products/{productId:int}"), HttpGet]
+        public async Task<ActionResult> GetProduct(int productId)
+        {
+            return Ok(await _productService.GetProduct(productId));
+        }
+
+        /// <summary>
+        /// Save Product
+        /// </summary>
+        /// <returns></returns>
+        [Route("products"), HttpPost]
+        public async Task SaveProduct()
+        {
+            await _productService.SaveProduct();
+        }
+
+        /// <summary>
+        /// Update Product
+        /// </summary>
+        /// <returns></returns>
+        [Route("products"), HttpPut]
+        public async Task<ActionResult> UpdateProduct()
+        {
+            return Ok(await _productService.GetProducts());
+        }
+
+        /// <summary>
+        /// Delete Product
+        /// </summary>
+        /// <returns></returns>
+        [Route("products"), HttpDelete]
+        public async Task<ActionResult> DeleteProduct()
+        {
+            return Ok(await _productService.GetProducts());
+        }
     }
 }

@@ -27,5 +27,17 @@ namespace Business.Services
             var productsViewModel = _mapper.Map<IEnumerable<ProductViewModel>>(getProducts);
             return productsViewModel;
         }
+
+        public async Task<ProductViewModel> GetProduct(int productId)
+        {
+            var getProduct = await _productRepository.GetProductAsync(productId);
+            var productViewModel = _mapper.Map<ProductViewModel>(getProduct);
+            return productViewModel;
+        }
+
+        public async Task SaveProduct()
+        {
+            await _productRepository.SaveProductAsync();
+        }
     }
 }
