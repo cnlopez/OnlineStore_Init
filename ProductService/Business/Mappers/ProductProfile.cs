@@ -20,6 +20,7 @@ namespace Business.Mappers
         public void DomainToViewModel()
         {
             CreateMap<Products, ProductViewModel>();
+            CreateMap<ProductViewModel, Products>();
         }
     }
 }

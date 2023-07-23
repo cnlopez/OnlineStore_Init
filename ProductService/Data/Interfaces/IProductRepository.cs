@@ -11,6 +11,8 @@ namespace Data.Interfaces
     {
         Task<IEnumerable<Products>> GetProductsAsync();
         Task<Products> GetProductAsync(int productId);
-        Task SaveProductAsync();
+        Task SaveProductAsync(Products product);
+        Task UpdateProduct(int productId, Products product);
+        Task DeleteProduct(int productId);
     }
 }

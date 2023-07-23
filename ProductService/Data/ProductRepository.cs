@@ -41,12 +41,27 @@ namespace Data
             return product;
         }
 
-        public async Task SaveProductAsync()
+        public async Task SaveProductAsync(Products product)
         {
-            var product = new Products();
             using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("API_OnlineStoreInit")))
             {
-                await sqlConnection.ExecuteAsync("spGetProducts", commandType: CommandType.StoredProcedure);
+                await sqlConnection.ExecuteAsync("spSaveProducts", new { product.ProductName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public async Task UpdateProduct(int productId, Products product)
+        {
+            using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("API_OnlineStoreInit")))
+            {
+                await sqlConnection.ExecuteAsync("spUpdateProducts", new { productId, product.ProductName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public async Task DeleteProduct(int productId)
+        {
+            using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("API_OnlineStoreInit")))
+            {
+                await sqlConnection.ExecuteAsync("spDeleteProducts", new { productId }, commandType: CommandType.StoredProcedure);
             }
         }
     }

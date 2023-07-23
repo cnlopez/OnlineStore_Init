@@ -1,5 +1,6 @@
 ﻿using Business.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using ViewModels.Product;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -40,29 +41,29 @@ namespace ProductService.Controllers
         /// </summary>
         /// <returns></returns>
         [Route("products"), HttpPost]
-        public async Task SaveProduct()
+        public async Task SaveProduct(ProductViewModel productViewModel)
         {
-            await _productService.SaveProduct();
+            await _productService.SaveProduct(productViewModel);
         }
 
         /// <summary>
         /// Update Product
         /// </summary>
         /// <returns></returns>
-        [Route("products"), HttpPut]
-        public async Task<ActionResult> UpdateProduct()
+        [Route("products/{productId:int}"), HttpPut]
+        public async Task UpdateProduct(int productId, ProductViewModel productViewModel)
         {
-            return Ok(await _productService.GetProducts());
+            await _productService.UpdateProduct(productId, productViewModel);
         }
 
         /// <summary>
         /// Delete Product
         /// </summary>
         /// <returns></returns>
-        [Route("products"), HttpDelete]
-        public async Task<ActionResult> DeleteProduct()
+        [Route("products/{productId:int}"), HttpDelete]
+        public async Task DeleteProduct(int productId)
         {
-            return Ok(await _productService.GetProducts());
+            await _productService.DeleteProduct(productId);
         }
     }
 }

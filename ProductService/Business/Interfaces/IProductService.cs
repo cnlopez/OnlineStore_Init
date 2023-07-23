@@ -11,7 +11,8 @@ namespace Business.Interfaces
     {
         Task<IEnumerable<ProductViewModel>> GetProducts();
         Task<ProductViewModel> GetProduct(int productId);
-        Task SaveProduct();
-
+        Task SaveProduct(ProductViewModel productViewModel);
+        Task UpdateProduct(int productId, ProductViewModel productViewModel);
+        Task DeleteProduct(int productId);
     }
 }

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using ViewModels.Product;
+using Data.Models;
 
 namespace Business.Services
 {
@@ -35,9 +36,21 @@ namespace Business.Services
             return productViewModel;
         }
 
-        public async Task SaveProduct()
+        public async Task SaveProduct(ProductViewModel productViewModel)
         {
-            await _productRepository.SaveProductAsync();
+            var product = _mapper.Map<Products>(productViewModel);
+            await _productRepository.SaveProductAsync(product);
+        }
+
+        public async Task UpdateProduct(int productId, ProductViewModel productViewModel)
+        {
+            var product = _mapper.Map<Products>(productViewModel);
+            await _productRepository.UpdateProduct(productId, product);
+        }
+
+        public async Task DeleteProduct(int productId)
+        {
+            await _productRepository.DeleteProduct(productId);
         }
     }
 }
