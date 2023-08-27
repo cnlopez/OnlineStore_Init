@@ -1,0 +1,14 @@
+[
+  {
+    "CategoryId": 1,
+    "CategoryName": "Fridge"
+  },
+  {
+    "CategoryId": 2,
+    "CategoryName": "TV"
+  },
+  {
+    "CategoryId": 3,
+    "CategoryName": "Washing machine"
+  }
+]

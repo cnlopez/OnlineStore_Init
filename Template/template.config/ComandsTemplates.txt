@@ -1,0 +1,17 @@
+In the install: go to the folder of the project, where the .sln is, create a folder call template.config
+
+in template.config folder, create a json with the configuration odf the template
+
+go to the folder of the project, where the .sln is, and run cmd comand:
+dotnet new -i .
+
+
+
+Create service: 
+dotnet new ms-template -n ServiceName
+
+
+Delete template
+dotnet new -u C:\Fuentes\OnlineStore_Services\ProductService
+
+
