@@ -1,3 +1,4 @@
+using Business.Settings;
 using Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,10 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.RegisterBusiness(builder.Configuration);
+builder.Services.AddOptions<AppSettings>()
+    .Bind(builder.Configuration.GetSection(AppSettings.SectionName))
+    .ValidateDataAnnotations()
+    .ValidateOnStart();
 
 var app = builder.Build();
 

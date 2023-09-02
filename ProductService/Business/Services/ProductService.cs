@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using AutoMapper;
 using ViewModels.Product;
 using Data.Models;
+using Business.Settings;
+using Microsoft.Extensions.Options;
 
 namespace Business.Services
 {
@@ -15,11 +17,15 @@ namespace Business.Services
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
+        private readonly string SenderEmail;
+        private readonly string RecipientMail;
 
-        public ProductService(IProductRepository productRepository, IMapper mapper)
+        public ProductService(IProductRepository productRepository, IMapper mapper, IOptionsSnapshot<AppSettings> optionsSnapshot)
         {
             _productRepository = productRepository;
             _mapper = mapper;
+            SenderEmail = optionsSnapshot.Value.SenderEmail;
+            RecipientMail = optionsSnapshot.Value.RecipientMail;
         }
 
         public async Task<IEnumerable<ProductViewModel>> GetProducts()
