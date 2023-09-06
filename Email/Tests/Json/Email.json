@@ -1,0 +1,14 @@
+[
+  {
+    "EmailId": 1,
+    "EmailName": "Fridge"
+  },
+  {
+    "EmailId": 2,
+    "EmailName": "TV"
+  },
+  {
+    "EmailId": 3,
+    "EmailName": "Washing machine"
+  }
+]

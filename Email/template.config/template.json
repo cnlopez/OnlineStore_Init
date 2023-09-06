@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Cesar",
+  "classifications": ["Project"],
+  "name": "Templates",
+  "shortName": "ms-template",
+  "identity": "Service.Template",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "Email",
+  "preferNameDirectory": true,
+  "symbols": {
+    "ProjectName": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "Microservice"
+    }
+  }
+}
