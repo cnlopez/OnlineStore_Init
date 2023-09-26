@@ -21,7 +21,7 @@ namespace Tests.Base
         public virtual void Init()
         {
             ProductRepositoryMock = new Mock<IProductRepository>();
-            ProductService = new ProductService(ProductRepositoryMock.Object, Mapper);
+            ProductService = new ProductService(ProductRepositoryMock.Object, Mapper, OptionsSnapshot);
         }
 
         [SetUp]

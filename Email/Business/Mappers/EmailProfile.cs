@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Business.Interfaces;
 using Data.Models;
-using ViewModels.Email;
+//using ViewModels.Email;
 
 namespace Business.Mappers
 {
@@ -19,8 +19,8 @@ namespace Business.Mappers
 
         public void DomainToViewModel()
         {
-            CreateMap<Email, EmailViewModel>();
-            CreateMap<EmailViewModel, Email>();
+            //CreateMap<Email, EmailViewModel>();
+            //CreateMap<EmailViewModel, Email>();
         }
     }
 }

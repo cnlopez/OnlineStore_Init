@@ -6,9 +6,17 @@ namespace Business.Settings
     {
         public const string SectionName = "AppSettings";
 
-        [Required]
+        [Required, EmailAddress]
         public string SenderEmail { get; set; }
+        [Required, EmailAddress]
+        public string RecipientEmail { get; set; }
         [Required]
-        public string RecipientMail { get; set; }
+        public string SmtpHost { get; set; }
+        [Required]
+        public int SmtpPort { get; set; }
+        [Required, EmailAddress]
+        public string SmtpUsername { get; set; }
+        [Required]
+        public string SmtpPassword { get; set; }        
     }
 }

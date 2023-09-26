@@ -19,7 +19,7 @@ namespace EmailService.Controllers
         /// Get Email
         /// </summary>
         /// <returns></returns>
-        [Route("email"), HttpGet]
+        [Route("email"), HttpPost]
         public async Task SendErrorNotification(string errorMessage)
         {
             await _emailService.SendErrorNotification(errorMessage);
