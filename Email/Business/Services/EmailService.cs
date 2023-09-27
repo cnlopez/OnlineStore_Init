@@ -47,7 +47,7 @@ namespace Business.Services
 
                     var message = new MailMessage(SenderEmail, RecipientEmail)
                     {
-                        Subject = "Error en la aplicación",
+                        Subject = "Error in the API",
                         Body = errorMessage,
                         IsBodyHtml = false
                     };
@@ -57,7 +57,7 @@ namespace Business.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al enviar el correo electrónico de notificación: {ex.Message}");
+                Console.WriteLine($"Error by sending notification email: {ex.Message}");
             }
         }
     }

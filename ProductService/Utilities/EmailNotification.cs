@@ -21,7 +21,7 @@ namespace Utilities
 
                     var message = new MailMessage(SenderEmail, RecipientEmail)
                     {
-                        Subject = "Error en la aplicación",
+                        Subject = "Error in the API",
                         Body = errorMessage,
                         IsBodyHtml = false
                     };
@@ -31,7 +31,7 @@ namespace Utilities
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al enviar el correo electrónico de notificación: {ex.Message}");
+                Console.WriteLine($"Error by sending notification email: {ex.Message}");
             }
         }
 
@@ -48,17 +48,17 @@ namespace Utilities
                 if (response.IsSuccessStatusCode)
                 {
                     string content = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine("Respuesta del servicio:");
+                    Console.WriteLine("Server response");
                     Console.WriteLine(content);
                 }
                 else
                 {
-                    Console.WriteLine($"La solicitud falló con el código de estado: {response.StatusCode}");
+                    Console.WriteLine($"The request failed with status code: {response.StatusCode}");
                 }
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine($"Error de solicitud HTTP: {e.Message}");
+                Console.WriteLine($"Error in requets HTTP: {e.Message}");
             }
         }
     }
