@@ -11,6 +11,7 @@ using Data.Models;
 using Business.Settings;
 using Microsoft.Extensions.Options;
 using Utilities;
+using Services2.Interfaces;
 
 namespace Business.Services
 {
@@ -24,8 +25,9 @@ namespace Business.Services
         private readonly string SmtpPassword;
         private readonly string SenderEmail;
         private readonly string RecipientEmail;
+        private readonly IEmailService _emailService;
 
-        public ProductService(IProductRepository productRepository, IMapper mapper, IOptionsSnapshot<AppSettings> optionsSnapshot)
+        public ProductService(IProductRepository productRepository, IMapper mapper, IOptionsSnapshot<AppSettings> optionsSnapshot, IEmailService emailService)
         {
             _productRepository = productRepository;
             _mapper = mapper;
@@ -35,6 +37,7 @@ namespace Business.Services
             SmtpPort = optionsSnapshot.Value.SmtpPort;
             SmtpUsername = optionsSnapshot.Value.SmtpUsername;
             SmtpPassword = optionsSnapshot.Value.SmtpPassword;
+            _emailService = emailService;
         }
 
         public async Task<IEnumerable<ProductViewModel>> GetProducts()
@@ -62,7 +65,7 @@ namespace Business.Services
             }
             catch (Exception ex)
             {
-                await EmailNotification.SendErrorNotification(ex.Message.ToString());
+                await _emailService.SendErrorNotification(ex.Message.ToString());
                 throw;
             }
         }
