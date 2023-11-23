@@ -49,7 +49,7 @@ namespace Data
             }
         }
 
-        public async Task UpdateProduct(int productId, Products product)
+        public async Task UpdateProductAsync(int productId, Products product)
         {
             using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("API_OnlineStoreInit")))
             {
@@ -57,7 +57,7 @@ namespace Data
             }
         }
 
-        public async Task DeleteProduct(int productId)
+        public async Task DeleteProductAsync(int productId)
         {
             using (var sqlConnection = new SqlConnection(_configuration.GetConnectionString("API_OnlineStoreInit")))
             {

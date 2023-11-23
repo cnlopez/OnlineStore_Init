@@ -15,7 +15,7 @@ namespace Tests
         public async Task GetProducts_ReturnSuccess()
         {
             ProductRepositoryMock.Setup(x => x.GetProductsAsync()).ReturnsAsync(ProductsModel);
-            var response = await ProductService.GetProducts();
+            var response = await ProductService.GetProductsAsync();
             Assert.IsNotNull(response);
         }
     }

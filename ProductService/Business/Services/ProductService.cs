@@ -40,7 +40,7 @@ namespace Business.Services
             _emailService = emailService;
         }
 
-        public async Task<IEnumerable<ProductViewModel>> GetProducts()
+        public async Task<IEnumerable<ProductViewModel>> GetProductsAsync()
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Business.Services
             }
         }
 
-        public async Task<ProductViewModel> GetProduct(int productId)
+        public async Task<ProductViewModel> GetProductAsync(int productId)
         {
             try
             {
@@ -70,21 +70,21 @@ namespace Business.Services
             }
         }
 
-        public async Task SaveProduct(ProductViewModel productViewModel)
+        public async Task SaveProductAsync(ProductViewModel productViewModel)
         {
             var product = _mapper.Map<Products>(productViewModel);
             await _productRepository.SaveProductAsync(product);
         }
 
-        public async Task UpdateProduct(int productId, ProductViewModel productViewModel)
+        public async Task UpdateProductAsync(int productId, ProductViewModel productViewModel)
         {
             var product = _mapper.Map<Products>(productViewModel);
-            await _productRepository.UpdateProduct(productId, product);
+            await _productRepository.UpdateProductAsync(productId, product);
         }
 
-        public async Task DeleteProduct(int productId)
+        public async Task DeleteProductAsync(int productId)
         {
-            await _productRepository.DeleteProduct(productId);
+            await _productRepository.DeleteProductAsync(productId);
         }
     }
 }

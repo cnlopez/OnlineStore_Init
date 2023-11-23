@@ -12,7 +12,7 @@ namespace Data.Interfaces
         Task<IEnumerable<Products>> GetProductsAsync();
         Task<Products> GetProductAsync(int productId);
         Task SaveProductAsync(Products product);
-        Task UpdateProduct(int productId, Products product);
-        Task DeleteProduct(int productId);
+        Task UpdateProductAsync(int productId, Products product);
+        Task DeleteProductAsync(int productId);
     }
 }

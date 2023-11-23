@@ -1,5 +1,6 @@
 using Business.Settings;
-using Services;
+//using Services;
+using Services.Ioc;
 
 var builder = WebApplication.CreateBuilder(args);
 

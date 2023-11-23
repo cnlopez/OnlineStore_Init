@@ -23,7 +23,7 @@ namespace ProductService.Controllers
         [Route("products"), HttpGet]
         public async Task<ActionResult> GetProducts()
         {
-            return Ok(await _productService.GetProducts());
+            return Ok(await _productService.GetProductsAsync());
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace ProductService.Controllers
         [Route("products/{productId:int}"), HttpGet]
         public async Task<ActionResult> GetProduct(int productId)
         {
-            return Ok(await _productService.GetProduct(productId));
+            return Ok(await _productService.GetProductAsync(productId));
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace ProductService.Controllers
         [Route("products"), HttpPost]
         public async Task SaveProduct(ProductViewModel productViewModel)
         {
-            await _productService.SaveProduct(productViewModel);
+            await _productService.SaveProductAsync(productViewModel);
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace ProductService.Controllers
         [Route("products/{productId:int}"), HttpPut]
         public async Task UpdateProduct(int productId, ProductViewModel productViewModel)
         {
-            await _productService.UpdateProduct(productId, productViewModel);
+            await _productService.UpdateProductAsync(productId, productViewModel);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace ProductService.Controllers
         [Route("products/{productId:int}"), HttpDelete]
         public async Task DeleteProduct(int productId)
         {
-            await _productService.DeleteProduct(productId);
+            await _productService.DeleteProductAsync(productId);
         }
     }
 }

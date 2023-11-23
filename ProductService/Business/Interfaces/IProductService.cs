@@ -9,10 +9,10 @@ namespace Business.Interfaces
 {
     public interface IProductService
     {
-        Task<IEnumerable<ProductViewModel>> GetProducts();
-        Task<ProductViewModel> GetProduct(int productId);
-        Task SaveProduct(ProductViewModel productViewModel);
-        Task UpdateProduct(int productId, ProductViewModel productViewModel);
-        Task DeleteProduct(int productId);
+        Task<IEnumerable<ProductViewModel>> GetProductsAsync();
+        Task<ProductViewModel> GetProductAsync(int productId);
+        Task SaveProductAsync(ProductViewModel productViewModel);
+        Task UpdateProductAsync(int productId, ProductViewModel productViewModel);
+        Task DeleteProductAsync(int productId);
     }
 }
