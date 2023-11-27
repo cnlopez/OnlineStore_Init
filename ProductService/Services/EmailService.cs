@@ -1,4 +1,5 @@
-﻿using Services.Interfaces;
+﻿using Microsoft.Extensions.Configuration;
+using Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,16 @@ namespace Services
 {
     public class EmailService : IEmailService
     {
+        private readonly IConfiguration _configuration;
+        public EmailService(IConfiguration configuration) 
+        {
+            _configuration = configuration;
+        }
         public async Task SendErrorNotification(string errorMessage)
         {
             using var httpClient = new HttpClient();
 
-            string apiUrl = "https://localhost:7268/email?errorMessage=" + errorMessage;
+            string apiUrl = _configuration["ServicesEndPoint:EmailService"]?.ToString() + errorMessage;
 
             try
             {

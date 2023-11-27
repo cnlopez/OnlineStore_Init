@@ -65,7 +65,7 @@ namespace Business.Services
             }
             catch (Exception ex)
             {
-                await _emailService.SendErrorNotification(ex.Message.ToString());
+                await _emailService.SendErrorNotification("Error");
                 throw;
             }
         }
