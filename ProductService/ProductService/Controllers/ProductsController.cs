@@ -1,4 +1,5 @@
 ﻿using Business.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ViewModels.Product;
 
@@ -21,6 +22,7 @@ namespace ProductService.Controllers
         /// </summary>
         /// <returns></returns>
         [Route("products"), HttpGet]
+        [Authorize]
         public async Task<ActionResult> GetProducts()
         {
             return Ok(await _productService.GetProductsAsync());
