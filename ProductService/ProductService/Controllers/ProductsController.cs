@@ -59,7 +59,7 @@ namespace ProductService.Controllers
         }
 
         /// <summary>
-        /// Delete Product
+        /// Delete Product //Test
         /// </summary>
         /// <returns></returns>
         [Route("products/{productId:int}"), HttpDelete]
